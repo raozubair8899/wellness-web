@@ -69,9 +69,9 @@ export default function Insights() {
         
         {/* Header */}
         <div className="mb-20 animate-fade-in-up">
-          <p className="text-white/60 text-sm md:text-base uppercase tracking-[0.4em] mb-4 font-medium drop-shadow-md">Insights</p>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-white mb-6 drop-shadow-lg">
-            Thoughts on RestNetd living.
+          <p className="text-teal-100/50 text-sm md:text-base uppercase tracking-[0.4em] mb-4 font-medium drop-shadow-sm">Insights</p>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-teal-50 mb-6 drop-shadow-lg leading-tight">
+            Thoughts on Restful living.
           </h1>
           <p className="text-white/80 text-xl max-w-2xl font-light drop-shadow-md leading-relaxed">
             Curated essays on focus, digital minimalism, and the pursuit of cognitive clarity.
@@ -85,7 +85,7 @@ export default function Insights() {
             className="mb-12 group cursor-pointer block animate-fade-in-up" 
             style={{ animationDelay: '100ms' }}
           >
-            <div className="bg-white/[0.03] border border-white/10 rounded-[2rem] hover:bg-white/[0.06] transition-all duration-500 relative overflow-hidden flex flex-col md:flex-row shadow-[0_8px_40px_rgba(255,255,255,0.02)] hover:shadow-[0_8px_60px_rgba(255,255,255,0.05)]">
+            <div className="bg-slate-900/30 backdrop-blur-3xl border border-white/10 rounded-[2rem] hover:bg-slate-800/40 transition-all duration-500 relative overflow-hidden flex flex-col md:flex-row shadow-[0_8px_40px_rgba(0,0,0,0.2)] hover:shadow-[0_16px_60px_-10px_rgba(0,0,0,0.5)]">
               {/* Image side */}
               <div className="w-full md:w-2/5 h-64 md:h-auto overflow-hidden">
                 <img 
@@ -98,20 +98,20 @@ export default function Insights() {
               {/* Content side */}
               <div className="p-8 md:p-14 w-full md:w-3/5 relative">
                 <div className="absolute top-0 right-0 p-8 opacity-0 translate-x-4 -translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-500">
-                  <ArrowUpRight className="w-8 h-8 text-white/50" />
+                  <ArrowUpRight className="w-8 h-8 text-teal-100/50" />
                 </div>
-                <span className="inline-block px-4 py-1.5 rounded-full border border-white/30 text-white text-xs uppercase tracking-widest mb-6 font-medium">
+                <span className="inline-block px-4 py-1.5 rounded-full border border-teal-500/30 bg-teal-950/40 text-teal-50 text-xs uppercase tracking-widest mb-6 font-medium">
                   Featured Insight
                 </span>
-                <h2 className="text-4xl md:text-5xl font-light text-white mb-6 group-hover:text-white/90 transition-colors drop-shadow-md">
+                <h2 className="text-4xl md:text-5xl font-light text-white mb-6 group-hover:text-teal-50 transition-colors drop-shadow-md leading-tight">
                   {dummyArticles[0].title}
                 </h2>
                 <p className="text-white/70 text-lg md:text-xl max-w-2xl mb-8 leading-relaxed font-light drop-shadow-sm">
                   {dummyArticles[0].excerpt}
                 </p>
-                <div className="flex items-center gap-4 text-white/60 text-sm font-medium uppercase tracking-widest">
+                <div className="flex items-center gap-4 text-teal-100/60 text-sm font-medium uppercase tracking-widest">
                   <span>{dummyArticles[0].date}</span>
-                  <span className="w-1 h-1 rounded-full bg-white/40" />
+                  <span className="w-1 h-1 rounded-full bg-teal-100/40" />
                   <span>{dummyArticles[0].readTime}</span>
                 </div>
               </div>
@@ -136,8 +136,8 @@ export default function Insights() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-                  <span className="text-white/90 text-xs font-semibold uppercase tracking-widest drop-shadow-md">{article.category}</span>
-                  <ArrowUpRight className="w-6 h-6 text-white/60 group-hover:text-white transition-colors" />
+                  <span className="text-teal-50 text-xs font-semibold uppercase tracking-widest drop-shadow-md">{article.category}</span>
+                  <ArrowUpRight className="w-6 h-6 text-white/60 group-hover:text-teal-100 transition-colors" />
                 </div>
               </div>
               <div className="p-8 flex-grow flex flex-col">
@@ -154,12 +154,36 @@ export default function Insights() {
             </div>
           ))}
         </div>
+
+        {/* High-Converting Newsletter CTA */}
+        <div className="mt-32 max-w-4xl mx-auto text-center animate-fade-in-up pb-12">
+          <div className="bg-slate-900/40 backdrop-blur-3xl border border-teal-500/10 rounded-[3rem] p-10 md:p-14 shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+            <h3 className="text-3xl md:text-4xl font-light text-white mb-4 drop-shadow-sm">Stay Centered.</h3>
+            <p className="text-white/60 mb-10 max-w-md mx-auto text-lg leading-relaxed font-light">
+              Get occasional insights on digital minimalism and focus engineering. No noise, just signal.
+            </p>
+            <form className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto" onSubmit={(e) => e.preventDefault()}>
+              <input 
+                type="email" 
+                placeholder="hello@domain.com" 
+                required
+                className="bg-slate-950/60 border border-white/10 rounded-full px-6 py-4 text-white placeholder-white/30 focus:outline-none focus:border-teal-500/50 flex-grow font-light transition-colors" 
+              />
+              <button 
+                type="submit"
+                className="bg-teal-50 hover:bg-white text-slate-950 rounded-full px-8 py-4 font-medium transition-all active:scale-95 shadow-[0_0_20px_rgba(20,184,166,0.2)] touch-manipulation flex-shrink-0"
+              >
+                Join Newsletter
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
 
       {/* --- Deep Work Distraction-Free Reading View --- */}
       {/* Keeping previous distraction-free code mostly identical, just updating typography for readability */}
       <div 
-        className={`fixed inset-0 z-[100] bg-black transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] overflow-y-auto ${
+        className={`fixed inset-0 z-[100] bg-slate-950 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] overflow-y-auto ${
           activeArticleId ? 'translate-y-0 opacity-100 pointer-events-auto' : 'translate-y-[100vh] opacity-0 pointer-events-none'
         }`}
       >

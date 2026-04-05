@@ -58,18 +58,18 @@ function FeatureCard({ feature, index }) {
     <div
       ref={ref}
       id={feature.id}
-      className={`group relative bg-white/[0.03] backdrop-blur-2xl border border-white/10 rounded-3xl p-10 flex flex-col gap-6
-        transition-all duration-700 cursor-default
-        hover:bg-white/[0.06] hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_8px_40px_rgba(255,255,255,0.05)]
+      className={`group relative bg-white/[0.02] backdrop-blur-3xl border border-white/5 rounded-3xl p-8 md:p-10 flex flex-col gap-6
+        transition-all duration-700 select-none
+        hover:bg-white/[0.05] hover:-translate-y-2 hover:border-white/20 active:scale-[0.98] hover:shadow-[0_16px_40px_-10px_rgba(0,0,0,0.5)]
         ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
       `}
       style={{ transitionDelay: `${index * 150}ms` }}
     >
-      <div className="text-white bg-white/5 w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-white/10 transition-all duration-500 shadow-inner">
+      <div className="text-teal-100 bg-white/5 w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-teal-900/30 transition-all duration-500 shadow-[inset_0_1px_4px_rgba(255,255,255,0.1)]">
         {feature.icon}
       </div>
-      <h3 className="text-white text-2xl font-medium tracking-wide drop-shadow-md">{feature.title}</h3>
-      <p className="text-white/70 text-base leading-relaxed font-light drop-shadow-sm">{feature.description}</p>
+      <h3 className="text-white text-xl md:text-2xl font-medium tracking-wide drop-shadow-md">{feature.title}</h3>
+      <p className="text-white/70 text-sm md:text-base leading-relaxed font-light drop-shadow-sm">{feature.description}</p>
     </div>
   )
 }
@@ -90,25 +90,25 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="bg-black py-40 px-6 relative overflow-hidden"
+      className="bg-transparent py-24 md:py-40 px-4 sm:px-6 relative overflow-hidden"
     >
       {/* Background ambient lighting */}
-      <div className="absolute top-0 right-0 w-1/2 h-[800px] bg-white/[0.02] rounded-full blur-[150px] pointer-events-none -translate-y-1/2" />
+      <div className="absolute top-0 right-0 w-[120%] md:w-1/2 h-[800px] bg-teal-900/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" />
       
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Section heading */}
         <div
           ref={headingRef}
-          className={`text-center mb-24 transition-all duration-1000 ${
+          className={`text-center mb-16 md:mb-24 transition-all duration-1000 select-none ${
             headingVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <p className="text-white/60 text-sm uppercase tracking-[0.4em] mb-6 font-medium drop-shadow-md">
+          <p className="text-teal-200/50 text-xs md:text-sm uppercase tracking-[0.4em] mb-4 md:mb-6 font-medium drop-shadow-sm">
             Core Experience
           </p>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-light text-white tracking-tight drop-shadow-lg leading-tight">
-            Designed for <span className="italic text-white drop-shadow-xl">deep clarity.</span>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-white tracking-tight drop-shadow-lg leading-tight px-2">
+            Designed for <span className="italic text-teal-50 drop-shadow-xl">deep clarity.</span>
           </h2>
         </div>
 
@@ -129,15 +129,18 @@ export default function Features() {
           </div>
 
           {/* Text Content */}
-          <div className="w-full lg:w-1/2">
-            <h3 className="text-4xl md:text-5xl font-light text-white mb-8 drop-shadow-md leading-[1.2]">
+          <div className="w-full lg:w-1/2 text-center lg:text-left px-2 sm:px-0">
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6 md:mb-8 drop-shadow-md leading-[1.2]">
               Psychological Engineering
             </h3>
-            <p className="text-white/80 text-xl leading-relaxed font-light mb-10 drop-shadow-sm">
+            <p className="text-white/80 text-base md:text-xl leading-relaxed font-light mb-8 md:mb-10 drop-shadow-sm">
               We leverage principles of cognitive neuroscience to engineer interfaces that actively resist distraction. By applying the "Zen Fade" and global Focus Modes, we deliberately slow your browsing speed, shifting your brain out of the reactive dopamine loop and into a state of intentional creation.
             </p>
-            <button className="flex items-center gap-3 text-white text-lg font-medium tracking-wide hover:gap-5 transition-all group">
-              Read the Whitepaper <ArrowRight className="w-5 h-5 group-hover:text-white/70" />
+            <button className="flex items-center justify-center lg:justify-start gap-3 w-full lg:w-auto text-teal-100 md:text-lg font-medium tracking-wide hover:gap-5 hover:text-white active:scale-95 transition-all group touch-manipulation select-none">
+              <span className="bg-teal-950/40 p-3 rounded-full border border-teal-500/20 group-hover:bg-teal-900/60 transition-colors">
+                <ArrowRight className="w-5 h-5" />
+              </span>
+              Read the Whitepaper
             </button>
           </div>
         </div>

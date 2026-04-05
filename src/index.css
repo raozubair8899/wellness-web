@@ -14,9 +14,10 @@ html {
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background: #000;
+  background: #020617;
   color: #fff;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Psychological Engineering Aesthetics */

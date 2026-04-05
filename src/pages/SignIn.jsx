@@ -27,9 +27,9 @@ export default function SignIn() {
   }
 
   return (
-    <div className="min-h-screen relative flex flex-col items-center justify-center px-6 overflow-hidden pt-20 pb-12">
+    <div className="min-h-screen relative flex flex-col items-center justify-center px-6 overflow-hidden pt-20 pb-12 select-none">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-black -z-20" />
+      <div className="absolute inset-0 bg-transparent -z-20" />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/[0.02] rounded-full blur-[120px] -z-10" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/[0.01] rounded-full blur-[100px] -z-10" />
 
@@ -46,28 +46,28 @@ export default function SignIn() {
 
         <form className="flex flex-col gap-6" onSubmit={handleLogin}>
           <div className="flex flex-col gap-2">
-            <label className="text-white/50 text-xs tracking-widest uppercase ml-1">Email Address</label>
+            <label className="text-teal-50 text-xs tracking-[0.2em] uppercase ml-1 opacity-70">Email Address</label>
             <input 
               type="email" 
               placeholder="name@domain.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-white/20 focus:outline-none focus:border-white/30 transition-colors font-light"
+              className="bg-slate-900/50 border border-white/5 rounded-xl px-5 py-4 text-white placeholder-white/20 focus:outline-none focus:border-teal-500/40 focus:bg-slate-800/60 transition-all font-light shadow-inner"
               required
             />
           </div>
           
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-center ml-1">
-              <label className="text-white/50 text-xs tracking-widest uppercase">Password</label>
-              <button type="button" className="text-white/30 hover:text-white/70 text-xs transition-colors font-light">Forgot?</button>
+              <label className="text-teal-50 text-xs tracking-[0.2em] uppercase opacity-70">Password</label>
+              <button type="button" className="text-teal-100/40 hover:text-teal-50 text-xs transition-colors font-light touch-manipulation">Forgot?</button>
             </div>
             <input 
               type="password" 
               placeholder="••••••••"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-white/20 focus:outline-none focus:border-white/30 transition-colors tracking-widest"
+              className="bg-slate-900/50 border border-white/5 rounded-xl px-5 py-4 text-white placeholder-white/20 focus:outline-none focus:border-teal-500/40 focus:bg-slate-800/60 transition-all tracking-widest shadow-inner"
               required
             />
           </div>
@@ -75,7 +75,7 @@ export default function SignIn() {
           <button 
             type="submit"
             disabled={isLoading}
-            className="mt-4 group relative w-full rounded-xl bg-white text-black font-medium py-4 overflow-hidden shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)] transition-shadow duration-500 disabled:opacity-70 disabled:cursor-not-allowed"
+            className="mt-4 group relative w-full rounded-xl bg-teal-50 text-slate-950 font-medium py-4 overflow-hidden shadow-[0_0_20px_rgba(20,184,166,0.2)] hover:shadow-[0_0_40px_rgba(20,184,166,0.4)] active:scale-[0.98] transition-all duration-500 disabled:opacity-70 disabled:cursor-not-allowed touch-manipulation"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
             <span className="flex items-center justify-center gap-2">
@@ -95,8 +95,8 @@ export default function SignIn() {
 
       {/* Guest Access Card */}
       <div className="w-full max-w-md mt-6 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 relative overflow-hidden group">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+        <div className="bg-slate-900/40 backdrop-blur-3xl border border-teal-500/10 rounded-2xl p-6 relative overflow-hidden group shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-teal-500/[0.03] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
           
           <div className="flex items-start justify-between mb-4">
             <div>
@@ -110,7 +110,7 @@ export default function SignIn() {
           <button 
             onClick={handleDemoLogin}
             disabled={isLoading}
-            className="w-full bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 rounded-xl py-3 text-white/80 text-sm transition-all duration-300 flex items-center justify-center gap-2"
+            className="w-full bg-slate-800/50 hover:bg-teal-900/40 border border-white/5 hover:border-teal-500/30 rounded-xl py-3 text-teal-50 text-sm transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 touch-manipulation"
           >
             One-Click Demo Login
           </button>

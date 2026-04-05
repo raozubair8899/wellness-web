@@ -34,9 +34,9 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full flex justify-between items-center px-8 py-5 z-50 transition-all duration-500 zen-fade-3 ${
+      className={`fixed top-0 w-full flex justify-between items-center px-4 md:px-8 py-4 z-50 transition-all duration-500 zen-fade-3 select-none ${
         scrolled || menuOpen
-          ? 'bg-black/80 backdrop-blur-md border-b border-white/10'
+          ? 'bg-slate-950/70 backdrop-blur-3xl border-b border-white/5 shadow-sm'
           : 'bg-transparent backdrop-blur-none border-b border-transparent'
       }`}
     >
@@ -68,10 +68,10 @@ export default function Navbar() {
       <div className="hidden md:flex items-center gap-6">
         <Link
           to="/signin"
-          className="rounded-full px-6 py-2.5 border border-white/40 text-white text-sm font-medium hover:bg-white text-black hover:text-black hover:bg-white/10 transition-all duration-300 drop-shadow-md bg-black/20 backdrop-blur-md"
+          className="rounded-full px-6 py-2.5 border border-white/40 text-white text-sm font-medium hover:bg-white active:scale-95 text-black hover:text-black hover:bg-white/10 transition-all duration-300 drop-shadow-md bg-white/5 backdrop-blur-md"
           style={{ '--tw-hover-bg-opacity': '0' }}
-          onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'white'; e.currentTarget.style.color = 'black'; }}
-          onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.2)'; e.currentTarget.style.color = 'white'; }}
+          onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'white'; e.currentTarget.style.color = '#020617'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)'; e.currentTarget.style.color = 'white'; }}
         >
           Sign In
         </Link>
@@ -92,8 +92,8 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div 
-        className={`absolute top-full left-0 w-full bg-black/95 backdrop-blur-2xl border-b border-white/10 flex flex-col items-center gap-6 py-10 md:hidden transition-all duration-500 overflow-hidden ${
-          menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 py-0 border-transparent'
+        className={`absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-3xl border-b border-white/10 flex flex-col items-center gap-6 py-8 md:hidden transition-all duration-500 overflow-hidden ${
+          menuOpen ? 'max-h-96 opacity-100 shadow-[0_20px_40px_rgba(0,0,0,0.5)]' : 'max-h-0 opacity-0 py-0 border-transparent shadow-none'
         }`}
       >
         {navLinks.map((link) => (
@@ -109,7 +109,7 @@ export default function Navbar() {
         ))}
         <Link
           to="/signin"
-          className="rounded-full px-10 py-3.5 border border-white/40 text-white text-base font-medium hover:bg-white hover:text-black transition-all duration-300 mt-4 bg-white/5"
+          className="rounded-full px-10 py-3.5 border border-white/40 text-white text-base font-medium hover:bg-white active:scale-95 hover:text-slate-950 transition-all duration-300 mt-4 bg-white/5"
         >
           Sign In
         </Link>
