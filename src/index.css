@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Psychological Engineering Aesthetics */
+::selection {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000;
+}
+
+/* Zen Fade Utilities */
+.zen-fade-1 { animation: zenFadeIn 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; opacity: 0; }
+.zen-fade-2 { animation: zenFadeIn 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards; opacity: 0; }
+.zen-fade-3 { animation: zenFadeIn 1.5s cubic-bezier(0.4, 0, 0.2, 1) 1.2s forwards; opacity: 0; }
+
+@keyframes zenFadeIn {
+  from { opacity: 0; filter: blur(4px); transform: translateY(10px); }
+  to { opacity: 1; filter: blur(0); transform: translateY(0); }
+}
